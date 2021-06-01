@@ -1,9 +1,5 @@
 import './sass/main.scss';
 
-const debounce = require('lodash.debounce');
+const input = document.queryselector('.input');
 
-function onSerche(){
-console.log('Hello')
-}
-
-// onSerche()
+console.log(input);
