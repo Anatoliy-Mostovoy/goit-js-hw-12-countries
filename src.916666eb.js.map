@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["input","document","queryselector","console","log"],"mappings":";;;AAIA,aAJA,QAAA,oBAEA,IAAMA,EAAQC,SAASC,cAAc,UAErCC,QAAQC,IAAIJ","file":"src.916666eb.js","sourceRoot":"../src","sourcesContent":["import './sass/main.scss';\n\nconst input = document.queryselector('.input');\n\nconsole.log(input);"]}
