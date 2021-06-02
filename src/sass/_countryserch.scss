@@ -1,0 +1,47 @@
+body{
+    width: 1400px;
+    background-color: teal;
+    color: antiquewhite;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-title{
+    text-align: center;
+}
+.input{
+    margin-left: 40%;
+    background-color: grey;
+    border: 3px solid greenyellow;
+    border-radius: 4px;
+    width: 300px;
+    height: 40px;
+}
+
+input::-webkit-input-placeholder {
+    color: whitesmoke; 
+}
+
+.input:focus{
+    outline: none;
+    background-color: whitesmoke;
+    border: 1px solid tomato;
+    color: tomato;
+}
+.card{
+    width: 310px;
+    border: 1px solid tomato;
+}
+
+.card-body{
+    text-align: center;
+
+}
+
+.country-card{
+display: flex;
+width: auto;
+}
+.card{
+    margin: 0 10px;
+    padding-bottom: 5px;
+}
