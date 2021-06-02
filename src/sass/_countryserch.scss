@@ -1,5 +1,6 @@
 body {
-  width: 1400px;
+  display: inline-block;
+  width: 1440px;
   background-color: teal;
   color: antiquewhite;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -9,7 +10,8 @@ body {
   text-align: center;
 }
 .input {
-  margin-left: 40%;
+  display: flex;
+  margin: 0 auto;
   background-color: grey;
   border: 3px solid greenyellow;
   border-radius: 4px;
@@ -27,19 +29,35 @@ input::-webkit-input-placeholder {
   border: 1px solid tomato;
   color: tomato;
 }
-.card {
-  border: 2px solid goldenrod;
-}
 
 .card-body {
   text-align: center;
 }
 
 .country-card {
-  display: flex;
+  // display: flex;
   width: auto;
 }
 .card {
-  margin: 0 10px;
+  // margin: 0 10px;
+  // width: 100%;
+  width: 300px;
+  margin: 0 auto;
   padding-bottom: 5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-img {
+  display: flex;
+  justify-content: center;
+}
+.country-list {
+  text-align: center;
+  text-decoration: none;
+}
+.list-item {
+  align-items: center;
+  margin-bottom: 10px;
+  list-style: none;
 }
