@@ -47,6 +47,7 @@ input::-webkit-input-placeholder {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  list-style: none;
 }
 .card-img {
   display: flex;
@@ -54,7 +55,7 @@ input::-webkit-input-placeholder {
 }
 .country-list {
   text-align: center;
-  text-decoration: none;
+  list-style: none;
 }
 .list-item {
   align-items: center;
