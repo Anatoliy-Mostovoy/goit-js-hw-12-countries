@@ -22,25 +22,25 @@ const debounce = require('lodash.debounce');
 refs.input.addEventListener('input', debounce(onInputValue,500));
 
 function onInputValue(event){
-event.preventDefault();
+    event.preventDefault();
 
 
 const form = event.target;
 const searchQuery = form.value.trim();
-if(searchQuery === ''){
-    return alert({
-        title: 'Хм...',
-        text: 'Дружок-пирожок, так мы ничего не найдем!',
-        delay: 1500
-      });;
-}
+    if(searchQuery === ''){
+        return alert({
+            title: 'Хм...',
+            text: 'Дружок-пирожок, так мы ничего не найдем!',
+            delay: 1000
+        });;
+    }
 // API.fetchCountryBuName(searchQuery) 
 //     .then(renderCountryCard)
 //     .catch(onFetchError);
 
 fetchCountries(searchQuery)
     .then(renderCountry)
-    .catch(onFetchError);
+    .catch(error => console.log("ПРиехали"));
 }
 
 //todo отдельная функция для fetch
@@ -64,7 +64,6 @@ function renderCountryList(data){
 }
 
 function onFetchError(error){
-    // alert('Такой страны нет в природе')
     error({
         title: "Error:",
         text: "No country with this name!"
@@ -81,7 +80,6 @@ function renderCountry(countries){
         refs.countryCard.innerHTML = '';
     }
     if(countries.length>10){
-        // alert('Сделайте валидный запрос')
         error({
             title: "Ой-ой, сильно много стран!",
             text: "Введи боллее валидный запрос!",
