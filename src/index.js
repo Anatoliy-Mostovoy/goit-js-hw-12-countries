@@ -29,22 +29,11 @@ function onInputValue(event) {
       delay: 1000,
     });
   }
-  // API.fetchCountryBuName(searchQuery)
-  //     .then(renderCountryCard)
-  //     .catch(onFetchError);
 
   fetchCountries(searchQuery)
     .then(renderCountry)
     .catch(error => console.log(error));
 }
-
-//todo отдельная функция для fetch
-// function fetchCountryBuName(inputName){
-//     const url = `https://restcountries.eu/rest/v2/name/${inputName}`
-//     return fetch (url).then(response=>{
-//         return response.json();
-// });
-// }
 
 // //todo отдельная функция для отрисовки разметки карточки стран
 function renderCountryCard(data) {
