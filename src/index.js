@@ -9,7 +9,7 @@ import fetchCountries from './js/fetchCountries.js'
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 import { alert, error, defaultModules } from '@pnotify/core';
-import * as PNotifyMobile from '@pnotify/mobile';
+import * as PNotifyMobile from '@pnotify/mobile'; 
 
 defaultModules.set(PNotifyMobile, {});
 
@@ -40,7 +40,7 @@ const searchQuery = form.value.trim();
 
 fetchCountries(searchQuery)
     .then(renderCountry)
-    .catch(error => console.log("ПРиехали"));
+    .catch(error => console.log(error));
 }
 
 //todo отдельная функция для fetch
