@@ -6,6 +6,16 @@ import countryList from './templates/country-list.hbs';
 // console.log(API)
 
 import fetchCountries from './js/fetchCountries.js'
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+import { alert, error, defaultModules } from '@pnotify/core';
+import * as PNotifyMobile from '@pnotify/mobile';
+
+defaultModules.set(PNotifyMobile, {});
+
+// alert({
+//   text: 'Notice me, senpai!'
+// });
 
 const debounce = require('lodash.debounce');
 
@@ -18,7 +28,11 @@ event.preventDefault();
 const form = event.target;
 const searchQuery = form.value.trim();
 if(searchQuery === ''){
-    return alert('начните ввод');
+    return alert({
+        title: 'Хм...',
+        text: 'Дружок-пирожок, так мы ничего не найдем!',
+        delay: 1500
+      });;
 }
 // API.fetchCountryBuName(searchQuery) 
 //     .then(renderCountryCard)
@@ -50,7 +64,11 @@ function renderCountryList(data){
 }
 
 function onFetchError(error){
-    alert('Такой страны нет в природе')
+    // alert('Такой страны нет в природе')
+    error({
+        title: "Error:",
+        text: "No country with this name!"
+    });
 }
 
 function renderCountry(countries){
@@ -63,6 +81,11 @@ function renderCountry(countries){
         refs.countryCard.innerHTML = '';
     }
     if(countries.length>10){
-        alert('Сделайте валидный запрос');
+        // alert('Сделайте валидный запрос')
+        error({
+            title: "Ой-ой, сильно много стран!",
+            text: "Введи боллее валидный запрос!",
+            delay: 1500
+        });
     }
-}
+}   
