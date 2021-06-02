@@ -14,9 +14,12 @@ refs.input.addEventListener('input', debounce(onInputValue,500));
 function onInputValue(event){
 event.preventDefault();
 
+
 const form = event.target;
 const searchQuery = form.value.trim();
-
+if(searchQuery === ''){
+    return alert('начните ввод');
+}
 // API.fetchCountryBuName(searchQuery) 
 //     .then(renderCountryCard)
 //     .catch(onFetchError);
@@ -47,17 +50,19 @@ function renderCountryList(data){
 }
 
 function onFetchError(error){
-    console.log(error)
+    alert('Такой страны нет в природе')
 }
 
 function renderCountry(countries){
     if(countries.length===1){
         renderCountryCard(countries);
+        refs.listCountry.innerHTML = '';
     }
     if(countries.length >=2 && countries.length<=10){
         renderCountryList(countries)
+        refs.countryCard.innerHTML = '';
     }
     if(countries.length>10){
-        alert('Седалайте валидный запрос')
+        alert('Сделайте валидный запрос');
     }
 }
